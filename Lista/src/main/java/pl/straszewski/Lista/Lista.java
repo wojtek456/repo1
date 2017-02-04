@@ -119,7 +119,7 @@ public class Lista {
 			writer.close();
 
 		} catch (IOException e) {
-			System.out.println("blad");
+			System.out.println("error");
 		}
 	}
 }
