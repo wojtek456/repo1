@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public class Lista {
 
-	int[] liczby;
+	private int[] liczby;
 	private int pojemnosc;
 	private int rozmiar;
 
@@ -29,22 +29,20 @@ public class Lista {
 	}
 
 	public int znajdz(int liczba) {
-		int indeks = -1;
+
 		for (int i = 0; i < rozmiar; i++) {
 			if (liczby[i] == liczba) {
-				indeks = i;
-				return indeks;
+				return i;
 			}
 		}
-		return indeks;
+		return -1;
 	}
 
 	public void pisz() {
 
 		StringBuilder text = new StringBuilder();
-		text.append(String.format("%-10s %-12s %-20s", "rozmiar listy: " + rozmiar, "\npojemnoœæ listy: " + pojemnosc,
-				"\nlista elementów tablicy:  "
-						+ Arrays.toString(Arrays.copyOf(liczby, rozmiar)).replaceAll("\\[|\\]|,", "")));
+		text.append(String.format("rozmiar listy: %-10s \npojemnoœæ listy: %-12s \nlista elementów tablicy: %-20s", rozmiar,  pojemnosc,
+						 Arrays.toString(Arrays.copyOf(liczby, rozmiar)).replaceAll("\\[|\\]|,", "")));
 		System.out.println(text.toString());
 	}
 
@@ -53,10 +51,10 @@ public class Lista {
 		for (int i = 0; i < rozmiar; i++) {
 			if (liczby[i] == liczba) {
 
-				for (int k = i; k < pojemnosc - 1; k++) {
+				for (int k = i; k < rozmiar - 1; k++) {
 					liczby[k] = liczby[k + 1];
 				}
-				liczby[pojemnosc - 1] = 0;
+				liczby[rozmiar - 1] = 0;
 				rozmiar -= 1;
 				break;
 			}

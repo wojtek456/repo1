@@ -25,6 +25,7 @@ public class MainClass {
 		tab.pisz();
 		
 		tab.usunPowtorzenia();
+		tab.odwroc();
 		tab.pisz();
 		//tab.zapiszDoPliku("Lista2.txt");
 
