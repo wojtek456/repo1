@@ -49,25 +49,17 @@ public class Lista {
 	}
 
 	public void usunPierwszy(int liczba) {
-		int[] tablicaIndexPowtorzen = new int[rozmiar];
-		int index = 0;
-		int sum = 0;
+
 		for (int i = 0; i < rozmiar; i++) {
 			if (liczby[i] == liczba) {
-				tablicaIndexPowtorzen[index] = i;
-				sum += 1;
-				index += 1;
 
+				for (int k = i; k < pojemnosc - 1; k++) {
+					liczby[k] = liczby[k + 1];
+				}
+				liczby[pojemnosc - 1] = 0;
+				rozmiar -= 1;
+				break;
 			}
-
-		}
-		if (sum > 1) {
-			for (int i = tablicaIndexPowtorzen[0]; i < pojemnosc - 1; i++) {
-				liczby[i] = liczby[i + 1];
-
-			}
-			liczby[pojemnosc - 1] = 0;
-			rozmiar -= 1;
 
 		}
 

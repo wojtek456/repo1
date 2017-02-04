@@ -15,12 +15,18 @@ public class MainClass {
 
 		// System.out.println(Arrays.toString(tab.liczby));
 		// System.out.println(tab.znajdz(7));
-		tab.usunPierwszy(10);
-		// tab.usunPierwszy(5);
-		// tab.usunPierwszy(6);
-
 		tab.pisz();
-		tab.zapiszDoPliku("Lista2.txt");
+		//tab.usunPierwszy(2);
+	//tab.usunPierwszy(2);
+	//tab.usunPierwszy(2);
+	tab.usunPierwszy(5);
+
+		
+		tab.pisz();
+		
+		tab.usunPowtorzenia();
+		tab.pisz();
+		//tab.zapiszDoPliku("Lista2.txt");
 
 	}
 }
