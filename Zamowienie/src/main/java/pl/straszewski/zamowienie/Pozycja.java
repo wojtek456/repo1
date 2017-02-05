@@ -1,9 +1,10 @@
 package pl.straszewski.zamowienie;
 
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.math.RoundingMode;
 
-public class Pozycja {
+public class Pozycja implements Serializable {
 	private String nazwaTowaru;
 	private int ileSztuk;
 	private double cena;

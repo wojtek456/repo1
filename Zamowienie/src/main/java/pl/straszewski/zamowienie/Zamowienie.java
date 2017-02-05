@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
-public class Zamowienie {
+public class Zamowienie implements Serializable {
 	int maksRozmiar;
 	Pozycja[] pozycje;
 	int ileDodanych;
@@ -92,7 +92,7 @@ public class Zamowienie {
 	public static void zapiszZamowienie(Zamowienie z, String nazwaPliku) {
 
 		try {
-			FileOutputStream fileOut = new FileOutputStream("test4.txt");
+			FileOutputStream fileOut = new FileOutputStream(nazwaPliku);
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
 			out.writeObject(z);
 			out.close();
@@ -104,4 +104,26 @@ public class Zamowienie {
 
 	}
 
+	public static Zamowienie wczytajZamowienie(String nazwaPliku) {
+		Zamowienie obj = new Zamowienie();
+
+		try {
+			FileInputStream fileIn = new FileInputStream(nazwaPliku);
+			ObjectInputStream in = new ObjectInputStream(fileIn);
+			obj = (Zamowienie) in.readObject();
+			in.close();
+			fileIn.close();
+		} catch (IOException i) {
+			i.printStackTrace();
+			return obj;
+		} catch (ClassNotFoundException c) {
+			System.out.println("Zamowienie class not found");
+			c.printStackTrace();
+			return obj;
+
+		}
+		System.out.println("Deserialization complete");
+		return obj;
+
+	}
 }

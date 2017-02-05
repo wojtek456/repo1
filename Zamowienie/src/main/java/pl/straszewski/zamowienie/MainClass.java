@@ -40,10 +40,16 @@ public class MainClass {
 
 		System.out.println(z);
 
-		z.usunPozycje(1);
-		z.edytujPozycje(2, "Jab³ka", 20, 1.15);
+		//z.usunPozycje(1);
+		//z.edytujPozycje(2, "Jab³ka", 20, 1.15);
 
-		//zapiszZamowienie(z, "test2.txt");
+		Zamowienie.zapiszZamowienie(z, "test.ser");
+		z.usunPozycje(1);
+		System.out.println(z);
+		z = Zamowienie.wczytajZamowienie("test.ser");
+		System.out.println(z);
+	
+	
 	}
 
 }
