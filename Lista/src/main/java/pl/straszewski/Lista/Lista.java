@@ -8,6 +8,11 @@ import java.util.Arrays;
 public class Lista {
 
 	private int[] liczby;
+	
+	public int[] getLiczby(){
+		return liczby;
+		
+	}
 	private int pojemnosc;
 	private int rozmiar;
 
@@ -88,7 +93,7 @@ public class Lista {
 	}
 
 	public void odwroc() {
-		int[] temp = new int[rozmiar];
+		int[] temp = new int[pojemnosc];
 		for (int i = 0; i < rozmiar; i++) {
 			temp[i] = liczby[rozmiar - 1 - i];
 

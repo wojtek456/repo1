@@ -14,7 +14,7 @@ public class MainClass {
 		tab.dodajElement(8);
 
 		// System.out.println(Arrays.toString(tab.liczby));
-		// System.out.println(tab.znajdz(7));
+		
 		tab.pisz();
 		//tab.usunPierwszy(2);
 	//tab.usunPierwszy(2);
@@ -28,6 +28,6 @@ public class MainClass {
 		tab.odwroc();
 		tab.pisz();
 		//tab.zapiszDoPliku("Lista2.txt");
-
+		System.out.println(tab.znajdz(7));
 	}
 }
